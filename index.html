@@ -153,7 +153,7 @@
 
         // Добавление космических кораблей
         const spaceshipMaterial = new THREE.MeshBasicMaterial({ color: 0xfff600 });
-        const spaceshipSize = 0.2;
+        const spaceshipSize = 0.01;
         let spaceships = [];
         let trails = [];
 
@@ -176,7 +176,7 @@
                 end = randomPositionInGalaxy();
             }
 
-            const spaceshipGeometry = new THREE.BoxGeometry(spaceshipSize, spaceshipSize, spaceshipSize);
+            const spaceshipGeometry = new THREE.SphereGeometry(spaceshipSize, 16, 16);
             const spaceship = new THREE.Mesh(spaceshipGeometry, spaceshipMaterial);
 
             spaceship.position.set(start.x, start.y, start.z);
